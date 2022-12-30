@@ -11,8 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import environ
-import os
+import environ, os, dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,14 +79,15 @@ WSGI_APPLICATION = 'justbhutan.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {  
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',  
-        'NAME': env('Database'),  
-        'USER': env('User'),  
-        'PASSWORD': env('Password'),  
-        'HOST': env('Host'),  
-        'PORT': env('Port')
-    }  
+    # 'default': {  
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',  
+    #     'NAME': env('Database'),  
+    #     'USER': env('User'),  
+    #     'PASSWORD': env('Password'),  
+    #     'HOST': env('Host'),  
+    #     'PORT': env('Port')
+    # }  
+    'default': dj_database_url.config()
 }
 
 # Password validation
