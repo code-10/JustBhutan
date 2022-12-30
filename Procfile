@@ -1,1 +1,1 @@
-web: gunicorn hegewater.wsgi
+web: gunicorn justbhutan.wsgi
