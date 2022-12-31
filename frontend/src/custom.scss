@@ -1,13 +1,16 @@
-/* import only the necessary Bootstrap files */
-@import "bootstrap/scss/functions"; 
-@import "bootstrap/scss/variables";
 
-/* -------begin customization-------- */
-/* change the primary theme color to red */
-$theme-colors: (
-  primary: #57c377
-);
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
 
-/* -------end customization-------- */
-/* finally, import Bootstrap to set the changes! */
+@import "../node_modules/bootstrap/scss/functions"; 
+
+$primary: #57c377;
+
 @import "bootstrap";
+
+.text-heading {
+  font-family: marcellus, serif;
+}
+
+.translucent-black-background {
+  background-color: rgba(0, 0, 0, 0.43);
+}
