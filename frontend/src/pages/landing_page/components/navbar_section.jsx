@@ -1,6 +1,6 @@
 import logo from "../../../assets/logo.svg"
 
-export default function Navbar() {
+export default function NavbarSection() {
   return (
     <nav className="navbar navbar-light bg-primary">
       <div className="container-fluid">
