@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'justbhutan.category',
+    'justbhutan.subcategory',
+    'justbhutan.product',
+    'justbhutan.city',
+    'justbhutan.survey',
 ]
 
 MIDDLEWARE = [
@@ -79,14 +84,6 @@ WSGI_APPLICATION = 'justbhutan.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {  
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',  
-    #     'NAME': env('Database'),  
-    #     'USER': env('User'),  
-    #     'PASSWORD': env('Password'),  
-    #     'HOST': env('Host'),  
-    #     'PORT': env('Port')
-    # }  
     'default': dj_database_url.config()
 }
 
