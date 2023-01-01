@@ -20,5 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/category/', include('justbhutan.category.urls')),
     path('api/sub_category/', include('justbhutan.subcategory.urls')),
-    path('api/product/', include('justbhutan.product.urls'))
+    path('api/product/', include('justbhutan.product.urls')),
+    path('api/city/', include('justbhutan.city.urls'))
 ]

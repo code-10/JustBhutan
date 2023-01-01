@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'justbhutan.category',
     'justbhutan.subcategory',
     'justbhutan.product',
+    'justbhutan.city',
 ]
 
 MIDDLEWARE = [
