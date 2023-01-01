@@ -2,5 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.AddSurvey)
+    path('',views.Survey),
+    path('to_excel',views.SurveyToExcel)
 ]

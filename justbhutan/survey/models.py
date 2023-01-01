@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.db import connections
 from django.db.utils import OperationalError
 from justbhutan.utility.response import convertListToJson
-from rest_framework import status
+# from justbhutan.utility.excel import ExportDataToExcel
 
 def AddSurvey(survey_request):
     db_connection = connections['default']
@@ -18,5 +18,15 @@ def AddSurvey(survey_request):
                 survey_request['city_id']
             ])
         return "survey added successfully"
+    except OperationalError as e:
+        JsonResponse("There is something wrong with the database connection", e)
+
+def SurveyToExcel():
+    db_connection = connections['default']
+    try:
+        cursor = db_connection.cursor()
+        cursor.execute('''select * from survey''')
+        data = cursor.fetchall()
+        return "survey exported successfully"
     except OperationalError as e:
         JsonResponse("There is something wrong with the database connection", e)

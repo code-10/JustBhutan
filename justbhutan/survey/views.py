@@ -6,7 +6,7 @@ from rest_framework.parsers import JSONParser
 from . import models
 
 @csrf_exempt
-def AddSurvey(request):
+def Survey(request):
     if request.method == 'POST':
         try:
             survey_request = JSONParser().parse(request)
@@ -14,3 +14,12 @@ def AddSurvey(request):
             return JsonResponse(result,status=status.HTTP_200_OK,safe=False)
         except Exception as e:
             JsonResponse("Something went wrong while adding a survey", e)
+
+@csrf_exempt
+def SurveyToExcel(request):
+    if request.method == 'GET':
+        try:
+            result = models.SurveyToExcel()
+            return JsonResponse(result,status=status.HTTP_200_OK,safe=False)
+        except Exception as e:
+            JsonResponse("Something went wrong while exporting data from database to survey", e)
