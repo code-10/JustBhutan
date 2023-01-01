@@ -5,7 +5,7 @@ from rest_framework import status
 from . import models
 
 @csrf_exempt
-def GetAllSubCategories(request):
+def SubCategory(request):
     if request.method == 'GET':
         try:
             result = models.GetAllSubCategories()
