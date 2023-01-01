@@ -16,3 +16,16 @@ def GetAllProducts():
         return result
     except OperationalError as e:
         JsonResponse("There is something wrong with the database connection", e)
+
+def AddProduct(product_request):
+    db_connection = connections['default']
+    try:
+        cursor = db_connection.cursor()
+        cursor.execute('''insert into product(product_name, product_description)
+            values(%s,%s)''', [
+                product_request['product_name'], 
+                product_request['product_description']
+            ])
+        return "product added successfully"
+    except OperationalError as e:
+        JsonResponse("There is something wrong with the database connection", e)
