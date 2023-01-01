@@ -1,9 +1,11 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Marcellus&display=swap');
 
 @import "../node_modules/bootstrap/scss/functions"; 
 
 $primary: #57c377;
+
+$font-family-base: 'Lato', serif;
 
 @import "bootstrap";
 
