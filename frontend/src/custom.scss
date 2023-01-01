@@ -5,6 +5,19 @@
 
 $primary: #57c377;
 
+@import "../node_modules/bootstrap/scss/variables";
+
+$spacers : map-merge(
+  (
+    6: $spacer * 6,
+    7: $spacer * 12
+  ) , 
+  $spacers );
+
+$theme-colors : map-merge((
+  'lightgray': #F4F4F4
+), $theme-colors);
+
 $font-family-base: 'Lato', serif;
 
 @import "bootstrap";

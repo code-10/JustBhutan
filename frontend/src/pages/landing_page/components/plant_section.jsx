@@ -23,16 +23,19 @@ const plant_labels = [
 
 export default function PlantSection () {
     return(
-        <div className="container-sm text-center mt-5 pt-5">
-            <h2 className="text-heading">
-                Your Teas Aren't Really <span className="text-primary">Safe</span>
-            </h2>
-            <h5>
-                Busting the myth. Click to read more
-            </h5>
+        <div className="container-sm text-center mt-sm-5 pt-sm-5">
+            <h1 className="text-heading">
+            <span className="text-primary">"Organic"</span> Herbal Teas From India? 
+            </h1>
+            <h4>
+                Busting the myth, with concrete facts
+            </h4>
             <div className="row">
                 <div className="mt-5 position-relative col-md-12 col-lg-10 mx-auto">
+
                     <img src={plant_image} className="" width={180} alt="tea plant"/>
+                    
+                    {/* add labels to plant image using absolute positioning */}
                     { plant_labels.map( (plant_label, i) =>
                         <div className={`position-absolute ${plant_label.position} d-md-inline-block d-none`}>
                             <div className={`position-relative ${plant_label.align}`}>
@@ -44,6 +47,7 @@ export default function PlantSection () {
                             </div>
                         </div>
                     )}
+
                 </div>
             </div>
         </div>

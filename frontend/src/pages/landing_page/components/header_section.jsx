@@ -1,3 +1,5 @@
+import video from "../../../assets/header_video.mp4"
+
 const teapot_png = "https://uploads-ssl.webflow.com/63a80885ac4e7cdae577faf0/63a99d1dcefc0f2a1dc87cea_Tea%20kettle%202.png"
 
 const articles = [
@@ -9,29 +11,8 @@ const articles = [
 
 export default function HeaderSection(){
     return(
-        <div className="container-xxl mt-5">
-            <div className="row row-cols-2">
-
-                {/* Column 1 */}
-                <div className="col-sm vstack gap-5 ">
-                    <h1 className="text-heading">
-                        Are You Happy With Your <br/><span className="text-primary">Green Tea ?</span>
-                    </h1>
-                    <img src={teapot_png} alt="teapot" className="img-fluid" width={400}/>
-                </div>
-
-                {/* Columns 2 */}
-                <div className="col-sm vstack gap-5">
-                    {articles.map( article => 
-                    <a href={article.url}>
-                        <img className="img-fluid" alt="article image" src={article.image}/>
-                    </a>)}
-                    <a href="https://drive.google.com/file/d/1OxPi52AXl431KEZXvzfBrMdd_88ht0yH/view?usp=share_link" className="h4 text-dark">
-                        More Articles
-                    </a>
-                </div>
-                
-            </div>
+        <div className="container-fluid ratio ratio-16x9 p-0">
+            <video src={video} autoPlay loop muted></video>
         </div>
     )
 }

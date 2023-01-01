@@ -1,20 +1,18 @@
-const forest_image = "https://uploads-ssl.webflow.com/63a80885ac4e7cdae577faf0/63aa7322c73ddfab93f2c6c8_Section3%20image%20story.jpg"
-const teacup_image = "https://uploads-ssl.webflow.com/63a80885ac4e7cdae577faf0/63aa6f7dbe456f1320c5fef9_tea.png"
+import forest_image from "../../../assets/tea_field_something.png"
 
 export default function ForestSection () {
     return(
-        <div className="text-center mt-5 ">
+        <div className="text-center mt-sm-5 ">
             <div className="position-relative">
-                <img src={forest_image} className="img-fluid" alt="forest image"/>
-                <div className="position-absolute top-50 start-0 text-center w-100 text-light translucent-black-background">
-                    <h2 className="text-heading pt-4">
+                <img src={forest_image} className="img-fluid text-center" alt="forest image"/>
+                <div className="position-absolute py-3 py-md-5 w-75 top-50 start-50 text-center translate-middle text-light translucent-black-background">
+                    <h1 className="text-heading mb-3">
                         Our Solution: Herbal Teas From Bhutan.
-                    </h2>
-                    <h5>
+                    </h1>
+                    <h5 className="text-subheading-rfs">
                         The last truly organic country
                     </h5>
                 </div>
-                <img src={teacup_image} className="w-25 position-absolute top-100 start-50 translate-middle" alt="teacup image"/>
             </div>
         </div>
     )
