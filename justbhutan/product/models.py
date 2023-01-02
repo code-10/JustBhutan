@@ -21,10 +21,11 @@ def AddProduct(product_request):
     db_connection = connections['default']
     try:
         cursor = db_connection.cursor()
-        cursor.execute('''insert into product(product_name, product_description)
-            values(%s,%s)''', [
+        cursor.execute('''insert into product(product_name, product_description, sub_category_id)
+            values(%s,%s,%s)''', [
                 product_request['product_name'], 
-                product_request['product_description']
+                product_request['product_description'],
+                product_request['sub_category_id']
             ])
         return "product added successfully"
     except OperationalError as e:
