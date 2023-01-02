@@ -1,33 +1,33 @@
 export default [
     {
         sub_category_id: '1',
-        sub_category_name:"Tulsi",
+        sub_category_name:"Herbal Teas",
         products:[
-            { product_id : '1', product_name: "Tulsi 1"},
-            { product_id : '2', product_name: "Tulsi 2"},
-            { product_id : '3', product_name: "Tulsi 3"},
-            { product_id : '4', product_name: "Tulsi 4"},
+            { product_id : '1', product_name: "Tulsi Moringa"},
+            { product_id : '2', product_name: "Mint"},
+            { product_id : '3', product_name: "Lemon Beebrush"},
+            { product_id : '4', product_name: "Mushroom"},
 
         ]
     },
     {
         sub_category_id: '2',
-        sub_category_name:"Ginger",
+        sub_category_name:"Medicinal Teas",
         products:[
-            { product_id : '1', product_name: "Ginger 1"},
-            { product_id : '2', product_name: "Ginger 2"},
-            { product_id : '3', product_name: "Ginger 3"},
-            { product_id : '4', product_name: "Ginger 4"},
+            { product_id : '1', product_name: "Ginger Turmeric "},
+            { product_id : '2', product_name: "Beetroot"},
+            { product_id : '3', product_name: "Ginger Codyceps"},
+            { product_id : '4', product_name: "Cordyceps Tea"},
         ]
     },
     {
         sub_category_id: '3',
-        sub_category_name:"Mint",
+        sub_category_name:"Leisure Teas",
         products:[
-            { product_id : '1', product_name: "Mint 1"},
-            { product_id : '2', product_name: "Mint 2"},
-            { product_id : '3', product_name: "Mint 3"},
-            { product_id : '4', product_name: "Mint 4"},
+            { product_id : '1', product_name: "Gooseberry"},
+            { product_id : '2', product_name: "Seaberry"},
+            { product_id : '3', product_name: "Corn Tea"},
+            { product_id : '4', product_name: "Nettle"},
         ]
     },
     {
