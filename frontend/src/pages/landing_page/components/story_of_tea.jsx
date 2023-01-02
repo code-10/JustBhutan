@@ -30,29 +30,20 @@ export default function StoryOfTeaSection(){
             <div className="row justify-content-center">
                 <div className="col-xl-12 col-xl-10 col-lg-8">
                     <div className="row mt-5 flex-column flex-md-row text-center">
-                        <div className="col d-flex flex-column gap-3 border-end border-dark opacity-50 text-md-end pe-md-5">
-                            <h1></h1>
-                            <h1></h1>
-                            <h1><span className="text-primary">What You</span> Won't <span className="text-primary">Get</span></h1>
+                        <div className="col d-flex flex-column gap-3 border-end border-dark opacity-25 text-md-end pe-md-5">
+
+                            <h1 className="pt-5"><span className="text-primary">What You</span> Won't <span className="text-primary">Get</span></h1>
                             <h5>Pesticide infused tea</h5>
                             <h5>Heavy metal laden tea</h5>
-                            <h5>Air pollution absorbing herbs</h5>
-                            <h1></h1>
-                            <h1></h1>
-                            <h1></h1>
-                            <h1></h1>
+                            <h5 className="pb-md-6">Air pollution absorbing herbs</h5>
                         </div>
                         <div className="col d-flex flex-column gap-3  text-md-start ps-md-5">
-                            <h1></h1>
-                            <h1></h1>
-                            <h1>What You <span className="text-primary">Will</span> Get</h1>
+
+                            <h1 className="pt-5">What You <span className="text-primary">Will</span> Get</h1>
                             <h5>Non GMO, 100% organic herbs</h5>
                             <h5>A refreshingly strong taste & aroma</h5>
                             <h5>Teas grown in the healthiest of soils</h5>
-                            <h1></h1>
-                            <h1></h1>
-                            <h1></h1>
-                            <h1></h1>
+
                         </div>
                     </div>
                 </div>
