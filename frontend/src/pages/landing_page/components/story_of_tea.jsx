@@ -7,10 +7,9 @@ import story3 from "../../../assets/story3.png"
 
 export default function StoryOfTeaSection(){
     return(
-        <div className="container-fluid text-center position-relative">
-            <img src={teacup_image} className="w-25 position-absolute start-50 top-0 translate-middle" alt="teacup image"/>
-            <div className="pt-5 mt-5"></div>
-            <div className=" mt-5"></div>
+        <div className="container-fluid text-center position-relative" >
+            <img src={teacup_image} className=" tea-image position-absolute start-50 top-0 translate-middle" alt="teacup image"/>
+            <div className="mt-lg-7 mt-6 "></div>
             <h1 className="text-primary text-center"> The Story Of Our Teas </h1>
             <h3> Which can soon be yours  </h3>
             <div className="d-flex flex-md-row flex-column justify-content-md-evenly gap-5 align-items-center align-items-md-end mt-5">

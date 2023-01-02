@@ -30,3 +30,64 @@ $font-family-base: 'Lato', serif;
 .translucent-black-background {
   background-color: rgba(0, 0, 0, 0.43);
 }
+
+.div-line {
+  height: 6px;
+}
+@include media-breakpoint-up(xs) {
+  .navbar-logo{
+    width:90px;
+  }
+  .tea-image{
+    width: 300px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .navbar-logo{
+    width:100px;
+  }
+  .tea-image{
+    width: 400px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .navbar-logo{
+    width:140px;
+  }
+  .tea-image{
+    width: 500px;
+  }
+}
+
+
+
+
+
+@include media-breakpoint-only(xl) {
+  .forest-image {
+    height: 1000px;
+    object-fit: cover;
+  }
+}
+@include media-breakpoint-only(lg) {
+  .forest-image {
+    height: 800px;
+    object-fit: cover;
+  }
+}
+
+@include media-breakpoint-only(md) {
+  .forest-image {
+    height: 700px;
+    object-fit: cover;
+  }
+}
+
+@include media-breakpoint-between(xs, sm) {
+  .forest-image {
+    height: 600px;
+    object-fit: cover;
+  }
+}
