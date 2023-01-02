@@ -17,6 +17,6 @@ def Product(request):
         try:
             product_request = JSONParser().parse(request)
             result = models.AddProduct(product_request)
-            return JsonResponse(result,status=status.HTTP_201_OK,safe=False)
+            return JsonResponse(result,status=status.HTTP_201_CREATED,safe=False)
         except Exception as e:
             JsonResponse("Something went wrong while adding a product", e)
