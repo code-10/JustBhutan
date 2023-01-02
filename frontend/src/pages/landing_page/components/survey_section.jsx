@@ -85,7 +85,7 @@ export default function SurveySection() {
                 <div className="container-sm mx-auto row row-cols-xxl-4 row-cols-sm-2 row-cols-1">
                         {productData.map( (sub_category_data, i) =>
                             <div key={i} className="col">
-                                <div className="d-flex flex-column align-items-center align-items-stretch p-3">
+                                <div className="d-flex flex-column align-items-sm-center align-items-stretch p-3">
                                     <div>
                                         <div className=""> 
                                             <p className="my-0 fs-6 ps-1 fw-bold">
