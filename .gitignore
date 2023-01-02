@@ -4,3 +4,4 @@ __pycache__
 static
 # dist
 justbhutan/__pycache__/
+prod.env
