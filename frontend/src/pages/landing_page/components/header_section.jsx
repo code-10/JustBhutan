@@ -11,7 +11,7 @@ const articles = [
 
 export default function HeaderSection(){
     return(
-        <div className="container-fluid ratio ratio-16x9 p-0">
+        <div className="ratio ratio-16x9  p-0">
             <video src={video} autoPlay loop muted></video>
         </div>
     )

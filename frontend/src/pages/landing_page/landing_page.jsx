@@ -1,3 +1,4 @@
+import FooterSection from "./components/footer_section";
 import ForestSection from "./components/forest_section";
 import HeaderSection from "./components/header_section";
 import NavbarSection from "./components/navbar_section";
@@ -15,6 +16,7 @@ export default function LandingPage() {
                 <ForestSection/>
                 <StoryOfTeaSection/>
                 <SurveySection/>
+                <FooterSection/>
             </div>
         </div>
     )

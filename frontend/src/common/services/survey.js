@@ -1,14 +1,19 @@
 import axios from "axios"
 
 async function postSurvey(name, email, phone, city, product_pref) {
+    
+    const csv_product_pref = product_pref.join(",")
     const data = {
         name: name,
-        email: email,
-        phone: phone,
+        email_id: email,
+        phone_number: phone,
         city: city,
-        product_pref: product_pref
+        product_ids: csv_product_pref
     }
-    const response = await axios.post("/api/product/sub_category/", data)
+    console.log("Sending : ", data)
+
+    const response = await axios.post("/api/survey/", data)
+
     return response.data
 }
 
