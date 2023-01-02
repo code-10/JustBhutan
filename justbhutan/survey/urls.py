@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('',views.Survey),
-    path('to_excel',views.SurveyToExcel)
+    path('to_excel/',views.SurveyToExcel)
 ]

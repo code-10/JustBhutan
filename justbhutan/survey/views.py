@@ -19,7 +19,7 @@ def Survey(request):
 def SurveyToExcel(request):
     if request.method == 'GET':
         try:
-            result = models.SurveyToExcel()
-            return JsonResponse(result,status=status.HTTP_200_OK,safe=False)
+            #result = models.SurveyToExcel()
+            return JsonResponse("still working on it",status=status.HTTP_200_OK,safe=False)
         except Exception as e:
             JsonResponse("Something went wrong while exporting data from database to survey", e)
