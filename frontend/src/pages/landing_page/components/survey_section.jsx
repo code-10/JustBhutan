@@ -7,13 +7,14 @@ import survey from "../../../common/services/survey";
 
 export default function SurveySection() {
     const [productData, setProductData] = useState([]);
+    const [origProductKV, setOrigProductKV] = useState({})
     const [productKV, setProductKV] = useState({});
     const formik = useFormik({
         initialValues:{
-            name:'harsha c',
-            email:'harsha@jed.com',
-            phone:'2222222222',
-            city:'bang',
+            name:'',
+            email:'',
+            phone:'',
+            city:'',
         },
         onSubmit: (values, {setSubmitting, setErrors, setStatus, resetForm}) => {
             const product_preference = []
@@ -32,6 +33,7 @@ export default function SurveySection() {
                 .then( d => {
                     console.log(d);
                     alert("Submitted");
+                    setProductKV(origProductKV);
                     resetForm({})
                     setStatus({success: true})
                 })
@@ -57,7 +59,8 @@ export default function SurveySection() {
                     });
                 });  
                 console.log(proccessedProductData);
-                setProductKV(proccessedProductData)
+                setProductKV(proccessedProductData);
+                setOrigProductKV(JSON.parse(JSON.stringify(proccessedProductData)));
                 setProductData(data);                
             })
     }, [])
