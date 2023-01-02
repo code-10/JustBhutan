@@ -2,9 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Marcellus&display=swap');
 
 @import "../node_modules/bootstrap/scss/functions"; 
+@import "../node_modules/bootstrap/scss/mixins";
 
 $primary: #57c377;
-$font-size-base: 1.15rem;
+
+$font-size-base: 1.35rem;
 
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -105,6 +107,11 @@ $font-family-base: 'Lato', serif;
   .survey-form-center{
     width: 600px;
   }
+  .story-image-block {
+    img {
+      width:200px;
+    }
+  }
 }
 
 @include media-breakpoint-up(md) {
@@ -177,3 +184,8 @@ $font-family-base: 'Lato', serif;
   }  
 }  
 
+:root{
+  @include media-breakpoint-down(sm){
+    --bs-body-font-size: 0.9rem;
+  }
+}

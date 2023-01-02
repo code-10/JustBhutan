@@ -23,13 +23,13 @@ const plant_labels = [
 
 export default function PlantSection () {
     return(
-        <div className="container-lg text-center pt-5" id='plant'>
-            <h1 className="text-heading">
+        <div className="container-sm px-xxl-7 px-xl-6 text-center pt-5" id='plant'>
+            <h3 className="text-heading">
                 <span className="text-primary">"Organic"</span> Herbal Teas From India? 
-            </h1>
-            <h4>
+            </h3>
+            <p>
                 Busting the myth, with concrete facts
-            </h4>
+            </p>
             <div className="row my-5 py-1 my-lg-6 justify-content-center">
                 <div className="position-relative col-md-10">
 
@@ -39,7 +39,7 @@ export default function PlantSection () {
                     { plant_labels.map( (plant_label, i) =>
                         <div key={i} className={`position-absolute ${plant_label.position} d-lg-inline-block d-none `}>
                             <div className={`position-relative ${plant_label.align}`}>
-                                <a href={plant_label.url} className={`text-dark fw-bold h6 text-decoration-none position-absolute z-2 text-nowrap px-3 ${ plant_label.align === "text-end" ? 'top-0 start-100' : 'top-0 start-0'} translate-middle`}>
+                                <a href={plant_label.url} className={`text-dark fw-bold text-decoration-none position-absolute z-2 text-nowrap my-0 ${ plant_label.align === "text-end" ? 'bottom-0 end-0' : 'top-0 start-0'}`}>
                                     {plant_label.text}
                                 </a>
                                 { plant_label.align === "text-end" && i === 0 && <br/>}

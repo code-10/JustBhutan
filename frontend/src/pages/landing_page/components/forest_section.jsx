@@ -9,9 +9,9 @@ export default function ForestSection () {
                     <h3 className="text-heading mb-3">
                         Our Solution: Herbal Teas From Bhutan.
                     </h3>
-                    <h6 className="">
+                    <p className="">
                         The last truly organic country
-                    </h6>
+                    </p>
                 </div>
             </div>
         </div>
