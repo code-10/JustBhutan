@@ -16,7 +16,8 @@ $spacers : map-merge(
 
 $theme-colors : map-merge(
   (
-  'lightgray': #F4F4F4
+  'lightgray': #F4F4F4,
+  'footer-black':#1A1A1A,
   ) ,$theme-colors);
 
 $font-family-base: 'Lato', serif;
