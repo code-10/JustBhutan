@@ -1,5 +1,6 @@
 .env
 /venv
-__pycache__/
-staticfiles
-dist
+__pycache__
+static
+# dist
+justbhutan/__pycache__/
