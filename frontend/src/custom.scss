@@ -4,6 +4,7 @@
 @import "../node_modules/bootstrap/scss/functions"; 
 
 $primary: #57c377;
+$font-size-base: 1.25rem;
 
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -22,6 +23,7 @@ $theme-colors : map-merge(
 
 $font-family-base: 'Lato', serif;
 
+
 @import "bootstrap";
 
 .text-heading {
@@ -35,6 +37,32 @@ $font-family-base: 'Lato', serif;
 .div-line {
   height: 6px;
 }
+
+.footer-image-fix {
+  transform: translateY(-52px) rotateZ(-10deg) !important;
+  object-fit: cover;
+  width: 151px;
+  // transform: ;
+}
+
+@include media-breakpoint-down(xl){
+  .footer-image-fix {
+    transform: translateY(-52px) rotateZ(-10deg) !important;
+    width:100px;
+    object-fit: cover;
+    // transform: ;
+  }
+}
+@include media-breakpoint-down(lg){
+  .footer-image-fix {
+    transform: translateY(-52px) rotateZ(-10deg) !important;
+    width:70px;
+    object-fit: cover;
+    // transform: ;
+  }
+}
+
+
 @include media-breakpoint-up(xs) {
   .navbar-logo{
     width:90px;
@@ -59,6 +87,7 @@ $font-family-base: 'Lato', serif;
   }
   .tea-image{
     width: 500px;
+    overflow-x: hidden;
   }
 }
 
@@ -66,19 +95,13 @@ $font-family-base: 'Lato', serif;
 
 
 
-@include media-breakpoint-only(xl) {
+
+@include media-breakpoint-down(md) {
   .forest-image {
-    height: 1000px;
+    height: 700px;
     object-fit: cover;
   }
 }
-@include media-breakpoint-only(lg) {
-  .forest-image {
-    height: 800px;
-    object-fit: cover;
-  }
-}
-
 @include media-breakpoint-only(md) {
   .forest-image {
     height: 700px;
@@ -86,9 +109,18 @@ $font-family-base: 'Lato', serif;
   }
 }
 
-@include media-breakpoint-between(xs, sm) {
+@include media-breakpoint-only(lg) {
   .forest-image {
-    height: 600px;
+    height: 800px;
     object-fit: cover;
-  }
-}
+  }  
+}  
+
+@include media-breakpoint-only(xl) {
+  .forest-image {
+    height: 1000px;
+    object-fit: cover;
+    overflow: hidden;
+  }  
+}  
+
