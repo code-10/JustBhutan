@@ -15,13 +15,13 @@ def AddSurvey(survey_request):
     db_connection = connections['default']
     try:
         cursor = db_connection.cursor()
-        cursor.execute('''insert into survey(name, email_id, phone_number, pincode, city, product_ids)
+        cursor.execute('''insert into survey(name, email_id, phone_number, pincode, city_id, product_ids)
             values(%s,%s,%s,%s,%s,%s)''', [
                 survey_request['name'], 
                 survey_request['email_id'], 
                 survey_request['phone_number'], 
                 survey_request['pincode'], 
-                survey_request['city'],
+                survey_request['city_id'],
                 survey_request['product_ids']
             ])
         return "survey added successfully"
@@ -32,40 +32,28 @@ def SurveyToExcel():
     db_connection = connections['default']
     try:
         cursor = db_connection.cursor()
-        cursor.execute('''select product_ids from survey''')
+        cursor.execute('''select * from survey''')
         data = cursor.fetchall()
 
-        product_ids = tuple(map(int, data[0][0].split(',')))
+        output = BytesIO()
 
-        cursor.execute('''select product.product_name, survey.name, 
-        survey.email_id, survey.phone_number, 
-        city.city_name from survey 
-        inner join city on city.city_id = survey.city_id 
-        inner join product on product.product_id in %s''',[product_ids])
-        data = cursor.fetchall()
-
-        # print(data)
-
-        # output = BytesIO()
-
-        # workbook = xlsxwriter.Workbook(output)
-        # worksheet = workbook.add_worksheet()
+        workbook = xlsxwriter.Workbook(output)
+        worksheet = workbook.add_worksheet()
         
-        # header_data = ("ID", "Name", "Email ID", "Phone Number", "Pincode", "City ID")
+        header_data = ("ID", "Name", "Email ID", "Phone Number", "Pincode", "City ID")
 
-        # data.insert(0,header_data)
+        data.insert(0,header_data)
 
-        # for row, line in enumerate(data):
-        #     for col, cell in enumerate(line):
-        #         worksheet.write(row, col, cell)
+        for row, line in enumerate(data):
+            for col, cell in enumerate(line):
+                worksheet.write(row, col, cell)
 
-        # workbook.close()
+        workbook.close()
 
-        # output.seek(0)
-        # response = HTTPResponse(output.read(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-        # response['Content-Disposition'] = "attachment; filename=survey.xlsx"
+        output.seek(0)
+        response = HTTPResponse(output.read(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+        response['Content-Disposition'] = "attachment; filename=survey.xlsx"
 
-        # return response
-        return ""
+        return response
     except OperationalError as e:
         JsonResponse("There is something wrong with the database connection", e)

@@ -1,43 +1,32 @@
-from http.client import HTTPResponse
+from django.http.response import HttpResponse
 from pymysql import *
-import xlwt
-import pandas.io.sql as sql
-import os
-from xlutils.copy import copy
-from xlrd import open_workbook
+import xlsxwriter
+try:
+    from StringIO import BytesIO
+except ImportError:
+    from io import BytesIO
 
-# def ExportDataToExcel(data):
-#     response = HTTPResponse(mimetype='application/ms-excel')
-#     response['Content-Disposition'] = 'attachment; filename=elagu.xls'
-#     wb = xlwt.Workbook(encoding='utf-8')
-#     ws = wb.add_sheet("surveys")
+def ExportDataToExcel(data):
+    output = BytesIO()
 
-#     row_num = 0
+    workbook = xlsxwriter.Workbook(output)
+    worksheet = workbook.add_worksheet()
+    
+    header_data = ("ID", "Name", "Email ID", "Phone Number", "City", "Product Name")
 
-#     columns = [
-#         (u"ID", 6000),
-#         (u"t_stamp", 8000),
-#     ]
+    data.insert(0,header_data) #Headers
 
-#     font_style = xlwt.XFStyle()
-#     font_style.font.bold = True
+    for row, line in enumerate(data):
+        for col, cell in enumerate(line):
+            worksheet.write(row, col, cell)
 
-#     for col_num in xrange(len(columns)):
-#         ws.write(row_num, col_num, columns[col_num][0], font_style)
-#         ws.col(col_num).width = columns[col_num][1]
+    workbook.close()
 
-#     font_style = xlwt.XFStyle()
-#     font_style.alignment.wrap = 1
+    output.seek(0)
 
-#     for obj in data:
-#         row_num += 1
-#         row = [
-#             row_num,
-#             obj['todo_job'],        
-#             obj['creation_date'].strftime("%A %d. %B %Y"),
-#         ]
-#         for col_num in xrange(len(row)):
-#             ws.write(row_num, col_num, row[col_num], font_style)
+    response = HttpResponse(output.read(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
+    response['Content-Disposition'] = "attachment; filename=survey.xlsx"
 
-#     wb.save(response)
-#     return response
+    output.close()
+
+    return response
