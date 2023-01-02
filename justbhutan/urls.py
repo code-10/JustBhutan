@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/product/', include('justbhutan.product.urls')),
     path('api/city/', include('justbhutan.city.urls')),
     path('api/survey/', include('justbhutan.survey.urls')),
+    path('api/sku/', include('justbhutan.sku.urls')),
     path("", render_react),
     # re_path(r"^(?:.*)/?$", render_react)
 ]

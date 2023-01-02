@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'justbhutan.product',
     'justbhutan.city',
     'justbhutan.survey',
+    'justbhutan.sku',
 ]
 
 MIDDLEWARE = [
