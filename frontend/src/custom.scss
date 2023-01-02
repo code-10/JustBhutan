@@ -4,7 +4,7 @@
 @import "../node_modules/bootstrap/scss/functions"; 
 
 $primary: #57c377;
-$font-size-base: 1.25rem;
+$font-size-base: 1.15rem;
 
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -62,23 +62,70 @@ $font-family-base: 'Lato', serif;
   }
 }
 
+@include media-breakpoint-down(lg){
+  .footer-image-fix {
+    transform: translateY(-20px) rotateZ(-10deg) !important;
+    width:70px;
+    object-fit: cover;
+    // transform: ;
+  }
+}
+
 
 @include media-breakpoint-up(xs) {
   .navbar-logo{
-    width:90px;
+    width:140px;
   }
   .tea-image{
     width: 300px;
+  }
+  .header-video{
+    width: 100%;
+  }
+  .some-plant{
+    width:130px;
+  }
+  .story-image-block {
+    img {
+      width: 150px;
+    }
+  }
+  .survey-form-center{
+    width: 100%;
+  }
+
+}
+
+@include media-breakpoint-up(sm) {
+  .story-image-block {
+    img {
+      width: 175px;
+    }
+  }
+  .survey-form-center{
+    width: 600px;
   }
 }
 
 @include media-breakpoint-up(md) {
   .navbar-logo{
-    width:100px;
+    width:140px;
   }
   .tea-image{
     width: 400px;
   }
+  .header-video{
+    width: 750px;
+  }
+    .some-plant{
+    width:200px;
+  }
+  .story-image-block {
+    img {
+      width:241px;
+    }
+  }
+
 }
 
 @include media-breakpoint-up(lg) {
@@ -91,17 +138,23 @@ $font-family-base: 'Lato', serif;
   }
 }
 
+@include media-breakpoint-up(xl) {
+  .header-video{
+    width: 1100px;
+  }
 
+}
 
 
 
 
 @include media-breakpoint-down(md) {
   .forest-image {
-    height: 700px;
+    height: 600px;
     object-fit: cover;
   }
 }
+
 @include media-breakpoint-only(md) {
   .forest-image {
     height: 700px;

@@ -1,9 +1,10 @@
+
 import logo from "../../../assets/logo.svg"
 
 export default function NavbarSection() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-      <div className="container-fluid px-3 px-lg-5 py-1 py-lg-3">
+      <div className="container-md px-4 px-lg-5 py-1">
         <a className="navbar-brand" href="#">
           <img
             src={logo}
@@ -16,7 +17,7 @@ export default function NavbarSection() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse justify-content-end pt-lg-0 pt-2" id="navbarNav">
-          <ul className="navbar-nav fw-semibold gap-md-5 gap-2 align-items-end">
+          <ul className="navbar-nav fw-base gap-md-5 gap-2 align-items-end">
             <li className="nav-item">
               <a className="nav-link active text-light" aria-current="page" href="#plant">The Problem</a>
             </li>
@@ -24,7 +25,7 @@ export default function NavbarSection() {
               <a className="nav-link active text-light" aria-current="page" href="#forest">The Solution</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active text-light" aria-current="page" href="#">Sign Up!</a>
+              <a className="nav-link active text-light" aria-current="page" href="#survey">Sign Up!</a>
             </li>
           </ul>
         </div>

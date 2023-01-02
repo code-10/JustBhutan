@@ -11,8 +11,8 @@ const articles = [
 
 export default function HeaderSection(){
     return(
-        <div className="ratio ratio-16x9  p-0">
-            <video src={video} autoPlay loop muted></video>
+        <div className=" text-center py-1 py-sm-5">
+            <video src={video} className="header-video" autoPlay loop muted></video>
         </div>
     )
 }
