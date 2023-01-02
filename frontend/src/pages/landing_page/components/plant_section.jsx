@@ -23,30 +23,34 @@ const plant_labels = [
 
 export default function PlantSection () {
     return(
-        <div className="container-sm text-center mt-sm-5 pt-sm-5">
+        <div className="container-sm text-center pt-md-6 pb-md-7 pt-3 pb-5 ">
             <h1 className="text-heading">
-            <span className="text-primary">"Organic"</span> Herbal Teas From India? 
+                <span className="text-primary">"Organic"</span> Herbal Teas From India? 
             </h1>
             <h4>
                 Busting the myth, with concrete facts
             </h4>
-            <div className="row">
-                <div className="mt-5 position-relative col-md-12 col-lg-10 mx-auto">
+            <div className="row mt-6 justify-content-center">
+                <div className="position-relative col-md-12 col-xl-8">
 
-                    <img src={plant_image} className="" width={180} alt="tea plant"/>
+                    <img src={plant_image} className="w-25"  alt="tea plant"/>
                     
                     {/* add labels to plant image using absolute positioning */}
                     { plant_labels.map( (plant_label, i) =>
                         <div className={`position-absolute ${plant_label.position} d-md-inline-block d-none`}>
                             <div className={`position-relative ${plant_label.align}`}>
-                                <a href={plant_label.url} className={`text-dark position-absolute z-2 ${ plant_label.align === "text-end" ? 'top-0 end-0' : 'top-0 start-0'}`}>
+                                <a href={plant_label.url} className={`text-dark fw-bold h5 text-decoration-none position-absolute z-2 text-nowrap ${ plant_label.align === "text-end" ? 'top-0 start-100' : 'top-0 start-0'} translate-middle`}>
                                     {plant_label.text}
                                 </a>
                                 { plant_label.align === "text-end" && i === 0 && <br/>}
-                                <img src={plant_label.image} alt="plant label" className=""/>
+                                <img src={plant_label.image} alt="plant label" className="w-59"/>
                             </div>
                         </div>
                     )}
+
+                    <div className="d-md-none d-flex flex-column gap-3">
+                        { plant_labels.map ( lbl => <a>{lbl.text}</a>)}
+                    </div>
 
                 </div>
             </div>
