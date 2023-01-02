@@ -1,1 +1,1 @@
-web: gunicorn -b 0.0.0.0:8000 justbhutan.wsgi
+web: gunicorn -b 0.0.0.0:5000 justbhutan.wsgi
