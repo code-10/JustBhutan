@@ -1,32 +1,43 @@
-from django.http.response import HttpResponse
+from http.client import HTTPResponse
 from pymysql import *
-import xlsxwriter
-try:
-    from StringIO import BytesIO
-except ImportError:
-    from io import BytesIO
+import xlwt
+import pandas.io.sql as sql
+import os
+from xlutils.copy import copy
+from xlrd import open_workbook
 
-def ExportDataToExcel(data):
-    output = BytesIO()
+# def ExportDataToExcel(data):
+#     response = HTTPResponse(mimetype='application/ms-excel')
+#     response['Content-Disposition'] = 'attachment; filename=elagu.xls'
+#     wb = xlwt.Workbook(encoding='utf-8')
+#     ws = wb.add_sheet("surveys")
 
-    workbook = xlsxwriter.Workbook(output)
-    worksheet = workbook.add_worksheet()
-    
-    header_data = ("ID", "Name", "Email ID", "Phone Number", "City", "Product Name")
+#     row_num = 0
 
-    data.insert(0,header_data) #Headers
+#     columns = [
+#         (u"ID", 6000),
+#         (u"t_stamp", 8000),
+#     ]
 
-    for row, line in enumerate(data):
-        for col, cell in enumerate(line):
-            worksheet.write(row, col, cell)
+#     font_style = xlwt.XFStyle()
+#     font_style.font.bold = True
 
-    workbook.close()
+#     for col_num in xrange(len(columns)):
+#         ws.write(row_num, col_num, columns[col_num][0], font_style)
+#         ws.col(col_num).width = columns[col_num][1]
 
-    output.seek(0)
+#     font_style = xlwt.XFStyle()
+#     font_style.alignment.wrap = 1
 
-    response = HttpResponse(output.read(), content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
-    response['Content-Disposition'] = "attachment; filename=survey.xlsx"
+#     for obj in data:
+#         row_num += 1
+#         row = [
+#             row_num,
+#             obj['todo_job'],        
+#             obj['creation_date'].strftime("%A %d. %B %Y"),
+#         ]
+#         for col_num in xrange(len(row)):
+#             ws.write(row_num, col_num, row[col_num], font_style)
 
-    output.close()
-
-    return response
+#     wb.save(response)
+#     return response

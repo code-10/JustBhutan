@@ -1,4 +1,3 @@
-from http.client import HTTPResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
@@ -20,7 +19,7 @@ def Survey(request):
 def SurveyToExcel(request):
     if request.method == 'GET':
         try:
-            result = models.SurveyToExcel()
-            return result
+            #result = models.SurveyToExcel()
+            return JsonResponse("still working on it",status=status.HTTP_200_OK,safe=False)
         except Exception as e:
             JsonResponse("Something went wrong while exporting data from database to survey", e)
