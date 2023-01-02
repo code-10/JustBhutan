@@ -8,47 +8,49 @@ import turmeric from "../../../assets/Tumeric2.png"
 export default function FooterSection () {
     return(
         <div className="position-relative mt-7 mt-xl-8">
-            <div className="d-none d-xl-flex flex-row justify-content-around bottom-0 start-50 translate-middle position-absolute">
-                <img src={turmeric} className="img-fluid"/>
-                <img src={mint} className="img-fluid"/>
-                <img src={ginger} className="img-fluid"/>
-                <img src={tulsi} className="img-fluid"/>
+            <div className="position-absolute start-50 top-0 translate-middle w-100">
+                <div className="d-flex flex-row justify-content-around px-4">
+                    <img src={turmeric}  className="footer-image-fix"/>
+                    <img src={mint}  className="footer-image-fix"/>
+                    <img src={ginger}  className="footer-image-fix"/>
+                    <img src={tulsi}  className="footer-image-fix"/>
+                </div>
             </div>
-            <div className="bg-footer-black text-light py-6 px-md-5 px-xl-6 pb-7 position-relative">
-                <div className="row row-cols-lg-2 row-cols-1">
-                    <div className="col">
+            <div className="bg-footer-black text-light pt-6 pb-7 px-md-1 px-xl-5 position-relative">
+                <div className="d-flex flex-row flex-wrap justify-content-around">
+                    <div className="px-3">
                         <div className="d-flex flex-column align-items-center gap-6">
                             <div>
-                                <h3>
+                                <h4 className="pb-2">
                                     Customer Support
-                                </h3>
-                                <h5 className="text-secondary">
+                                </h4>
+                                <h6 className="text-secondary">
                                     You'll call us, just to tell us how good our teas are
-                                </h5>
+                                </h6>
                             </div>
                             <div>
-                                <h3>
+                                <h4 className="pb-2">
                                     For Distribution Rights
-                                </h3>
-                                <h5 className="text-secondary">
+                                </h4>
+                                <h6 className="text-secondary">
                                     You'll call us, just to tell us how good our teas are
-                                </h5>
+                                </h6>
                             </div>
                         </div>
                     </div>
-                    <div className="col mt-5 mt-md-0">
-                        <div className="d-flex flex-column align-items-center gap-5">
+                    <div className="px-3 pt-5 pt-lg-0">
+                        <div className="d-flex flex-column align-items-center gap-6">
                             <div>
-                                <h3>
+                                <h4 className="pb-2">
                                     Address
-                                </h3>
-                                <h5>
+                                </h4>
+                                <h6>
                                     H No 8-2-684/1/9, Road No. 12 Bhavani Nagar,<br/>
                                     Banjara Hills, Hyderabad, Telangana, India 500034
-                                </h5>
+                                </h6>
                             </div>
-                            <div>
-                                <img src={logo}/>
+                            <div className="align-self-start">
+                                <img src={logo} className="w-75"/>
                             </div>
                         </div>
                     </div>

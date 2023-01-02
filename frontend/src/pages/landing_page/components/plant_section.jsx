@@ -23,23 +23,23 @@ const plant_labels = [
 
 export default function PlantSection () {
     return(
-        <div className="container-sm text-center pt-lg-7 pt-5" id='plant'>
+        <div className="container-fluid text-center pt-5" id='plant'>
             <h1 className="text-heading">
                 <span className="text-primary">"Organic"</span> Herbal Teas From India? 
             </h1>
             <h4>
                 Busting the myth, with concrete facts
             </h4>
-            <div className="row my-5 my-lg-7 justify-content-center">
-                <div className="position-relative col-md-12 col-lg-10 col-xl-8">
+            <div className="row my-5 py-1 my-lg-7 justify-content-center">
+                <div className="position-relative col-md-10 col-lg-9 col-xl-8">
 
                     <img src={plant_image} className="w-25"  alt="tea plant"/>
                     
                     {/* add labels to plant image using absolute positioning */}
                     { plant_labels.map( (plant_label, i) =>
-                        <div key={i} className={`position-absolute ${plant_label.position} d-md-inline-block d-none`}>
+                        <div key={i} className={`position-absolute ${plant_label.position} d-lg-inline-block d-none `}>
                             <div className={`position-relative ${plant_label.align}`}>
-                                <a href={plant_label.url} className={`text-dark fw-bold h5 text-decoration-none position-absolute z-2 text-nowrap ${ plant_label.align === "text-end" ? 'top-0 start-100' : 'top-0 start-0'} translate-middle`}>
+                                <a href={plant_label.url} className={`text-dark fw-bold h6 text-decoration-none position-absolute z-2 text-nowrap px-3 ${ plant_label.align === "text-end" ? 'top-0 start-100' : 'top-0 start-0'} translate-middle`}>
                                     {plant_label.text}
                                 </a>
                                 { plant_label.align === "text-end" && i === 0 && <br/>}
@@ -48,7 +48,7 @@ export default function PlantSection () {
                         </div>
                     )}
 
-                    <div className="d-md-none d-flex flex-column gap-2 mt-4">
+                    <div className="d-lg-none d-flex flex-column gap-2 mt-4">
                         { plant_labels.map ( (lbl, i) => <a key={i} href={lbl.url} className="text-dark fw-bold h6 text-decoration-none text-nowrap">{lbl.text}</a>)}
                     </div>
 

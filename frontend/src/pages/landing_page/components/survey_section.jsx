@@ -72,7 +72,7 @@ export default function SurveySection() {
         setProductKV(prevProductKV)
     }
     return(
-        <div className="mt-md-7 mt-6">
+        <div className="mt-6 vstack">
             <div className="text-center">
                 <h1>
                     <span className="text-primary"> Your Choice </span> Matters
@@ -82,13 +82,13 @@ export default function SurveySection() {
                 </h4>
             </div>
             <form className="mt-sm-6" onSubmit={formik.handleSubmit}>
-                <div className="container-md mx-auto row row-cols-xl-4 row-cols-md-2 row-cols-1">
+                <div className="container-md mx-auto row row-cols-xxl-4 row-cols-md-2 row-cols-1 gx-5">
                         {productData.map( (sub_category_data, i) =>
                             <div key={i} className="col pt-5">
                                 <div className="py-2 "> 
-                                    <h2 className="ps-2 pe-5 fw-bold">
+                                    <h4 className="ps-2 pe-5 fw-bold">
                                         {sub_category_data.sub_category_name}
-                                    </h2>
+                                    </h4>
                                     <div className="rounded-pill bg-primary div-line"></div>
                                 </div>
                                 <div className="d-flex flex-column align-items-start gap-3">
@@ -96,15 +96,16 @@ export default function SurveySection() {
                                     {sub_category_data.products.map( (product_data, i) => 
                                         <div key={i} className="d-flex flex-row gap-4">
                                             <input className="form-check-input" type="checkbox" value={productKV[sub_category_data.sub_category_id][product_data.product_id]} onChange={(e) => handleCheckbox(e, sub_category_data.sub_category_id, product_data.product_id)}/>
-                                            <h4 className="form-check-label d-inline">
+                                            <h6 className="form-check-label d-inline">
                                                 {product_data.product_name}
-                                            </h4>
+                                            </h6>
                                         </div>
                                     )}
                                 </div>
                             </div>
                         )}
                 </div>
+                <h3 className="text-primary text-center mt-sm-6"> We will not spam you, Promise</h3>
                 <div className="row justify-content-center">
                     <div className="d-flex flex-column col-8 col-md-7 col-lg-6 col-xl-5 py-6 gap-5 ">
                         <div className="form-group">
