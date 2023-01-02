@@ -10,13 +10,14 @@ $primary: #57c377;
 $spacers : map-merge(
   (
     6: $spacer * 6,
-    7: $spacer * 12
-  ) , 
-  $spacers );
+    7: $spacer * 12,
+    8: $spacer * 24
+  ) ,$spacers );
 
-$theme-colors : map-merge((
+$theme-colors : map-merge(
+  (
   'lightgray': #F4F4F4
-), $theme-colors);
+  ) ,$theme-colors);
 
 $font-family-base: 'Lato', serif;
 
