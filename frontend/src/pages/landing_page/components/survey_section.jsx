@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import fake_product_data from "../../../common/fakedata/product_data";
 import { useFormik } from 'formik';
 import product from "../../../common/services/product"
+import survey from "../../../common/services/survey";
+
 export default function SurveySection() {
     const [productData, setProductData] = useState([]);
     const [productKV, setProductKV] = useState({});
@@ -13,14 +15,32 @@ export default function SurveySection() {
             phone:'2222222222',
             city:'bang',
         },
-        onSubmit: values => {
+        onSubmit: (values, {setSubmitting, setErrors, setStatus, resetForm}) => {
             const product_preference = []
             Object.keys(productKV).forEach( sub_cat_id => {
                 const pref_prod  = Object.keys(productKV[sub_cat_id]).filter( product_id => productKV[sub_cat_id][product_id].selected )
                 product_preference.push(...pref_prod);
-            }) 
-            console.log(product_preference)
-            alert(JSON.stringify(values))
+            })
+            if(product_preference.length === 0){
+                alert("No Product Selected")
+                setStatus({success: false})
+                setSubmitting(false)
+                setErrors({submit: "No Product Selected"})
+                return
+            }
+            survey.postSurvey(values.name, values.email, values.phone, values.city, product_preference)
+                .then( d => {
+                    console.log(d);
+                    alert("Submitted");
+                    resetForm({})
+                    setStatus({success: true})
+                })
+                .catch(d =>{
+                     alert("error", d)
+                     setStatus({success: false})
+                     setSubmitting(false)
+                     setErrors({submit: "No Product Selected"})
+                    })
         }
     }) 
 
@@ -59,7 +79,7 @@ export default function SurveySection() {
                 </h4>
             </div>
             <form className="mt-sm-6" onSubmit={formik.handleSubmit}>
-                <div className="container mx-auto row row-cols-lg-4 row-cols-2">
+                <div className="container mx-auto row row-cols-xl-4 row-cols-md-2 row-cols-1">
                         {productData.map( (sub_category_data, i) =>
                             <div key={i} className="col">
                                 <div className="py-2 fw-bold"> 
@@ -72,7 +92,7 @@ export default function SurveySection() {
                                     <div className=""></div>
                                     {sub_category_data.products.map( (product_data, i) => 
                                         <div key={i} className="d-flex flex-row gap-4">
-                                            <input className="form-check-input" type="checkbox" onChange={(e) => handleCheckbox(e, sub_category_data.sub_category_id, product_data.product_id)}/>
+                                            <input className="form-check-input" type="checkbox" value={productKV[sub_category_data.sub_category_id][product_data.product_id]} onChange={(e) => handleCheckbox(e, sub_category_data.sub_category_id, product_data.product_id)}/>
                                             <h4 className="form-check-label d-inline">
                                                 {product_data.product_name}
                                             </h4>
