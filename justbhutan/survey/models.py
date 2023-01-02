@@ -20,7 +20,7 @@ def AddSurvey(survey_request):
                 survey_request['name'], 
                 survey_request['email_id'], 
                 survey_request['phone_number'], 
-                survey_request['pincode'], 
+                '999999', 
                 survey_request['city'],
                 survey_request['product_ids']
             ])
