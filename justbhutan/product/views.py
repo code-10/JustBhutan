@@ -20,3 +20,12 @@ def Product(request):
             return JsonResponse(result,status=status.HTTP_201_CREATED,safe=False)
         except Exception as e:
             JsonResponse("Something went wrong while adding a product", e)
+
+@csrf_exempt
+def ProductsOfSubcategory(request,sub_category_id):
+    if request.method == 'GET':
+        try:
+            result = models.ProductsOfSubcategory(sub_category_id)
+            return JsonResponse(result,status=status.HTTP_200_OK,safe=False)
+        except Exception as e:
+            JsonResponse("Something went wrong while fetching products of subcategory <id>", e)
