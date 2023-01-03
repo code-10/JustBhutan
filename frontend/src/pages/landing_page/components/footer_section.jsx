@@ -24,7 +24,7 @@ export default function FooterSection () {
                                 <h6 className="pb-2 fs-5 text-heading">
                                     Customer Support
                                 </h6>
-                                <p className="text-secondary">
+                                <p className="">
                                     support@justbhutan.in |+91 8073263514
                                 </p>
                             </div>
@@ -32,7 +32,7 @@ export default function FooterSection () {
                                 <h6 className="pb-2 fs-5 text-heading pt-lg-6 pt-5">
                                     For Distribution Rights
                                 </h6>
-                                <p className="text-secondary">
+                                <p className="">
                                     international@justbhutan.in | +91 8073263514
                                 </p>
                             </div>
