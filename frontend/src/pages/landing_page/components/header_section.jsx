@@ -1,4 +1,4 @@
-import video from "../../../assets/header_video.mp4"
+import video from "../../../assets/header_video2.mp4"
 
 const teapot_png = "https://uploads-ssl.webflow.com/63a80885ac4e7cdae577faf0/63a99d1dcefc0f2a1dc87cea_Tea%20kettle%202.png"
 
