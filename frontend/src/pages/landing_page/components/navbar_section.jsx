@@ -3,8 +3,8 @@ import logo from "../../../assets/logo.svg"
 
 export default function NavbarSection() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-primary">
-      <div className="container-md px-4 px-lg-5 py-1">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="container-lg px-4 px-lg-5 py-1">
         <a className="navbar-brand" href="#">
           <img
             src={logo}
