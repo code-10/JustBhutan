@@ -39,7 +39,7 @@ export default function PlantSection () {
                     { plant_labels.map( (plant_label, i) =>
                         <div key={i} className={`position-absolute ${plant_label.position} d-lg-inline-block d-none `}>
                             <div className={`position-relative ${plant_label.align}`}>
-                                <a href={plant_label.url} className={`text-dark fw-bold text-decoration-none position-absolute z-2 text-nowrap my-0 ${ plant_label.align === "text-end" ? 'bottom-0 end-0' : 'top-0 start-0'}`}>
+                                <a href={plant_label.url} className={`text-dark fw-bold fs-7 text-decoration-none position-absolute z-2 text-nowrap my-0 ${ plant_label.align === "text-end" && i === 0 && "mb-4 pb-1"} ${ plant_label.align === "text-end" ? 'bottom-0 end-0' : 'top-0 start-0'}`}>
                                     {plant_label.text}
                                 </a>
                                 { plant_label.align === "text-end" && i === 0 && <br/>}
@@ -49,7 +49,7 @@ export default function PlantSection () {
                     )}
 
                     <div className="d-lg-none d-flex flex-column gap-2 mt-4">
-                        { plant_labels.map ( (lbl, i) => <a key={i} href={lbl.url} className="text-dark fw-bold h6 text-decoration-none text-nowrap">{lbl.text}</a>)}
+                        { plant_labels.map ( (lbl, i) => <a key={i} href={lbl.url} className="text-dark fw-bold fs-7 text-decoration-none text-nowrap">{lbl.text}</a>)}
                     </div>
 
                 </div>
