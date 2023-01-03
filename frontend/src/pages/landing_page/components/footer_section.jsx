@@ -16,41 +16,45 @@ export default function FooterSection () {
                     <img src={tulsi}  className="footer-image-fix"/>
                 </div>
             </div>
-            <div className="bg-footer-black text-light pt-6 pb-7 px-md-1 px-xl-6 position-relative">
+            <div className="bg-footer-black text-light px-5 pt-6 pb-7 px-xl-6 position-relative">
                 <div className="d-flex flex-row flex-wrap justify-content-between">
-                    <div className="px-3">
-                        <div className="d-flex flex-column align-items-center gap-6">
-                            <div>
+                    <div className="">
+                        <div className="d-flex flex-column align-items-center">
+                            <div className="align-self-start">
                                 <h6 className="pb-2 fs-5 text-heading">
                                     Customer Support
                                 </h6>
                                 <p className="text-secondary">
-                                    You'll call us, just to tell us how good our teas are
+                                    support@justbhutan.in |+91 8073263514
                                 </p>
                             </div>
                             <div>
-                                <h6 className="pb-2 fs-5 text-heading">
+                                <h6 className="pb-2 fs-5 text-heading pt-lg-6 pt-5">
                                     For Distribution Rights
                                 </h6>
                                 <p className="text-secondary">
-                                    You'll call us, just to tell us how good our teas are
+                                    international@justbhutan.in | +91 8073263514
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="px-3 pt-5 pt-lg-0">
-                        <div className="d-flex flex-column align-items-center gap-6">
+                    <div className=" pt-5 pt-lg-0">
+                        <div className="d-flex flex-column justify-items-center gap-5">
                             <div>
                                 <h6 className="pb-2 fs-5 text-heading">
                                     Address
                                 </h6>
                                 <p>
-                                    H No 8-2-684/1/9, Road No. 12 Bhavani Nagar,<br/>
-                                    Banjara Hills, Hyderabad, Telangana, India 500034
+                                    <b>Sourced:</b> Bhutan Farms
+                                </p>
+                                <br/>
+                                <p>
+                                    <b>Head Office:</b> H No 8-2-684/1/9, Road No. 12 , Banjara Hills,<br/>
+                                    Hyderabad, Telangana, India 500034
                                 </p>
                             </div>
                             <div className="align-self-start">
-                                <img src={logo} className="w-100"/>
+                                <img src={logo} width={150}/>
                             </div>
                         </div>
                     </div>
