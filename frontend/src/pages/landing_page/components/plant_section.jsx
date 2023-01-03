@@ -2,7 +2,7 @@ const plant_image = "https://uploads-ssl.webflow.com/63a80885ac4e7cdae577faf0/63
 
 const plant_labels = [
     {
-        url:"https://www.fhi.no/en/news/2021/heavy-metals-pregnancy-adhd/#:~:text=Several%20heavy%20metals%20such%20as,the%20fetus%20through%20the%20placenta.", 
+        url:"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4699750/", 
         text:"Cancer Causer", 
         align:"text-end",
         position:"top-0 end-0", 
