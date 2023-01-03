@@ -28,7 +28,7 @@ export default function FooterSection () {
                                     support@justbhutan.in |+91 8073263514
                                 </p>
                             </div>
-                            <div>
+                            <div className="pb-5">
                                 <h6 className="pb-2 fs-5 text-heading pt-lg-6 pt-5">
                                     For Distribution Rights
                                 </h6>
@@ -38,7 +38,7 @@ export default function FooterSection () {
                             </div>
                         </div>
                     </div>
-                    <div className=" pt-5 pt-lg-0">
+                    <div className="">
                         <div className="d-flex flex-column justify-items-center gap-5">
                             <div>
                                 <h6 className="pb-2 fs-5 text-heading">
