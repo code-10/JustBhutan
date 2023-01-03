@@ -23,6 +23,16 @@ $theme-colors : map-merge(
   'footer-black':#1A1A1A,
   ) ,$theme-colors);
 
+$font-sizes : map-merge(
+  (
+    65: $font-size-base * 0.87,
+    7: $font-size-base * 0.75,
+    75: $font-size-base * 0.62,
+    8: $font-size-base * 0.5
+  ),
+  $font-sizes
+);
+
 $font-family-base: 'Lato', serif;
 
 
@@ -189,3 +199,13 @@ $font-family-base: 'Lato', serif;
     --bs-body-font-size: 0.9rem;
   }
 }
+
+$font-sizes : map-merge(
+  (
+    65: $font-size-base * 0.87,
+    7: $font-size-base * 0.75,
+    75: $font-size-base * 0.62,
+    8: $font-size-base * 0.5
+  ),
+  $font-sizes
+);
