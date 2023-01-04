@@ -6,7 +6,7 @@ export default function NavbarSection() {
   const [scrollDir] = useDetectScroll({});
   console.log(scrollDir);
   return (
-    <div className="position-relative">
+    <div className="position-relative" style={{height:"77px"}}>
       <nav className={`navbar navbar-expand-lg navbar-dark bg-primary position-fixed underlap-fix w-100 ${ scrollDir === "down" ? "scrolled-down" : "scrolled-up"}`}>
         <div className="container-lg px-4 px-lg-5 py-1">
           <a className="navbar-brand" href="#">

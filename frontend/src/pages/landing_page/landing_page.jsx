@@ -8,7 +8,7 @@ import SurveySection from "./components/survey_section";
 
 export default function LandingPage() {
     return(
-        <div >
+        <div className="pt-0">
             <NavbarSection/>
             <div className="vstack">
                 <HeaderSection/>
