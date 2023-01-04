@@ -21,18 +21,18 @@ export default function FooterSection () {
                     <div className="">
                         <div className="d-flex flex-column align-items-center">
                             <div className="align-self-start">
-                                <h6 className="pb-2 fs-5 text-heading">
+                                <h6 className="pb-2 fs-55 text-heading">
                                     Customer Support
                                 </h6>
-                                <p className="">
+                                <p className="f-65">
                                     support@justbhutan.in |+91 8073263514
                                 </p>
                             </div>
                             <div className="pb-5">
-                                <h6 className="pb-2 fs-5 text-heading pt-lg-6 pt-5">
+                                <h6 className="pb-2 fs-55 text-heading pt-lg-6 pt-5">
                                     For Distribution Rights
                                 </h6>
-                                <p className="">
+                                <p className="f-65">
                                     international@justbhutan.in | +91 8073263514
                                 </p>
                             </div>
@@ -41,14 +41,14 @@ export default function FooterSection () {
                     <div className="">
                         <div className="d-flex flex-column justify-items-center gap-5">
                             <div>
-                                <h6 className="pb-2 fs-5 text-heading">
+                                <h6 className="pb-2 fs-55 text-heading">
                                     Address
                                 </h6>
-                                <p>
+                                <p className="f-65">
                                     <b>Sourced:</b> Bhutan Farms
                                 </p>
                                 <br/>
-                                <p>
+                                <p className="f-65">
                                     <b>Head Office:</b> H No 8-2-684/1/9, Road No. 12 , Banjara Hills,<br/>
                                     Hyderabad, Telangana, India 500034
                                 </p>

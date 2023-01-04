@@ -28,7 +28,7 @@ export default function PlantSection () {
                 <span className="text-primary">"Organic"</span> Herbal Teas From India? 
             </h3>
             <p>
-                Busting the myth, with concrete facts
+                Click each one to know more
             </p>
             <div className="row my-5 py-1 my-lg-6 justify-content-center">
                 <div className="position-relative col-md-10">
@@ -39,8 +39,8 @@ export default function PlantSection () {
                     { plant_labels.map( (plant_label, i) =>
                         <div key={i} className={`position-absolute ${plant_label.position} d-lg-inline-block d-none `}>
                             <div className={`position-relative ${plant_label.align}`}>
-                                <a href={plant_label.url} className={`text-dark fw-bold fs-7 text-decoration-none position-absolute z-2 text-nowrap my-0 ${ plant_label.align === "text-end" && i === 0 && "mb-4 pb-1"} ${ plant_label.align === "text-end" ? 'bottom-0 end-0' : 'top-0 start-0'}`}>
-                                    {plant_label.text}
+                                <a href={plant_label.url} target="_blank" className={`text-dark fw-bold fs-7 text-decoration-none position-absolute z-2 text-nowrap my-0 ${ plant_label.align === "text-end" && i === 0 && "mb-4 "} ${ plant_label.align === "text-end" ? 'bottom-0 end-0 pb-2' : 'top-0 start-0'}`}>
+                                    {`${i+1}. `} {plant_label.text}
                                 </a>
                                 { plant_label.align === "text-end" && i === 0 && <br/>}
                                 <img src={plant_label.image} alt="plant label" className="w-59"/>
@@ -49,7 +49,7 @@ export default function PlantSection () {
                     )}
 
                     <div className="d-lg-none d-flex flex-column gap-2 mt-4">
-                        { plant_labels.map ( (lbl, i) => <a key={i} href={lbl.url} className="text-dark fw-bold fs-7 text-decoration-none text-nowrap">{lbl.text}</a>)}
+                        { plant_labels.map ( (lbl, i) => <a key={i} href={lbl.url} className="text-dark fw-bold fs-75 text-decoration-none text-nowrap">{lbl.text}</a>)}
                     </div>
 
                 </div>

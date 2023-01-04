@@ -9,6 +9,9 @@ export default function SurveySection() {
     const [productData, setProductData] = useState([]);
     const [origProductKV, setOrigProductKV] = useState({})
     const [productKV, setProductKV] = useState({});
+    // const [alertMessage, setAlertMessage] = useState({isActive:false, message:'', alertType:'', header:""})
+    const [alertMessage, setAlertMessage] = useState({isActive:true, message:'tessssssssssssss', alertType:'alert-primary', header:"default"})
+
     const formik = useFormik({
         initialValues:{
             name:'',
@@ -23,7 +26,7 @@ export default function SurveySection() {
                 product_preference.push(...pref_prod);
             })
             if(product_preference.length === 0){
-                alert("No Product Selected")
+                setAlertMessage({ isActive:true, message:"No Product Selected", alertType:"alert-warning", header:"Warning !"})
                 setStatus({success: false})
                 setSubmitting(false)
                 setErrors({submit: "No Product Selected"})
@@ -32,19 +35,33 @@ export default function SurveySection() {
             survey.postSurvey(values.name, values.email, values.phone, values.city, product_preference)
                 .then( d => {
                     console.log(d);
-                    alert("Submitted");
+                    setAlertMessage({ isActive:true, message:"Submited Successfully", alertType:"alert-primary", header:"Success !"})
                     resetForm({})
                     setStatus({success: true})
                     setProductKV(origProductKV);
                 })
                 .catch(d =>{
-                     alert("error", d)
-                     setStatus({success: false})
-                     setSubmitting(false)
-                     setErrors({submit: "No Product Selected"})
-                    })
+                    setAlertMessage({ isActive:true, alertType:"alert-danger", header:"Error !"})
+                    setStatus({success: false})
+                    setSubmitting(false)
+                    setErrors({submit: "Something Happens"})
+                })
         }
     }) 
+
+    useEffect(() => {
+        if(alertMessage.isActive)
+        {
+            let intervalId = null;
+            intervalId = setTimeout(() =>{ 
+                console.log('Test');
+                // setAlertMessage({isActive:false, message:'', alertType:'', header:''})
+                setAlertMessage({...alertMessage,isActive:false})
+
+            }, 3000)
+            return () => clearInterval(intervalId);
+        }
+    }, [alertMessage])
 
     useEffect(() => {
         product.getProducts('')
@@ -73,6 +90,13 @@ export default function SurveySection() {
     }
     return(
         <div className=" mt-6 vstack">
+            <div className={`align-items-center alert flex-row ${ alertMessage.alertType } position-fixed top-0 end-0 m-3 ${ alertMessage.isActive ? 'fade-in' : 'fade-out'} pe-6`} >
+                <div>
+                    <h5 class="fw-bold alert-heading fs-65">{alertMessage.header}</h5>
+                    { alertMessage.message !== "" && <p class="mb-0 fs-7">{alertMessage.message}</p>}
+                </div>
+            </div>
+
             <div className="text-center">
                 <h3 className="text-heading">
                     <span className="text-primary"> Your Choice </span> Matters
@@ -87,17 +111,17 @@ export default function SurveySection() {
                             <div key={i} className="col">
                                 <div className="d-flex flex-column align-items-sm-center align-items-stretch p-3">
                                     <div className="">
-                                        <div className=""> 
-                                            <p className="my-0 fs-6 ps-1 fw-bold">
+                                        <div className="d-sm-inline-block "> 
+                                            <p className="my-0 fs-6 ps-1 fw-bold pe-2">
                                                 {sub_category_data.sub_category_name}
                                             </p>
-                                            <div className=" rounded-pill bg-primary div-line"></div>
+                                            <div className=" mt-1 rounded-pill bg-primary div-line"></div>
                                         </div>
                                         <div className="d-flex flex-column gap-3">
                                             <div className=""></div>
                                             {sub_category_data.products.map( (product_data, i) => 
                                                 <div key={i} className="d-flex flex-row gap-4">
-                                                    <input className="form-check-input" type="checkbox" checked={productKV[sub_category_data.sub_category_id][product_data.product_id].selected} onChange={(e) => handleCheckbox(e, sub_category_data.sub_category_id, product_data.product_id)}/>
+                                                    <input className="form-check-input p-1" type="checkbox" checked={productKV[sub_category_data.sub_category_id][product_data.product_id].selected} onChange={(e) => handleCheckbox(e, sub_category_data.sub_category_id, product_data.product_id)}/>
                                                     <p className="form-check-label d-inline">
                                                         {product_data.product_name}
                                                     </p>
@@ -113,19 +137,19 @@ export default function SurveySection() {
                 <div className="survey-form-center mx-auto px-4">
                         <div className="d-flex flex-column py-5 pt-sm-6 pb-5 gap-5 ">
                             <div className="form-group">
-                                <p  className=" text-center">Your Name</p>
+                                <p  className=" mb-1 text-center">Your Name</p>
                                 <input type="text" size="129" required className="form-control bg-lightgray rounded-pill py-2" id="name" name="name" onChange={formik.handleChange} value={formik.values.name} aria-describedby="" placeholder=""/>
                             </div>
                             <div className="form-group">
-                                <p  className=" text-center">Email</p>
+                                <p  className=" mb-1 text-center">Email</p>
                                 <input type="email" required className="form-control bg-lightgray rounded-pill py-2" id="email" name="email" onChange={formik.handleChange} value={formik.values.email} aria-describedby="" placeholder=""/>
                             </div>
                             <div className="form-group">
-                                <p  className=" text-center">Phone</p>
+                                <p  className=" mb-1 text-center">Phone</p>
                                 <input type="tel" minLength={10} maxLength={10} pattern="[0-9]{10}" required className="form-control bg-lightgray rounded-pill py-2" id="phone" name="phone" onChange={formik.handleChange} value={formik.values.phone} aria-describedby="" placeholder=""/>
                             </div>
                             <div className="form-group">
-                                <p  className=" text-center">City</p>
+                                <p  className="  mb-1 text-center">City</p>
                                 <input type="tel" required className="form-control bg-lightgray rounded-pill py-2" id="city" name="city" onChange={formik.handleChange} value={formik.values.city} aria-describedby="" placeholder=""/>
                             </div>
                         </div>
@@ -133,9 +157,9 @@ export default function SurveySection() {
                 <div className="d-flex flex-row justify-content-center pb-5">
                     <button type="submit" className="btn btn-primary btn-lg text-light fw-senibold px-5  rounded-pill">Submit</button>
                 </div>
-                <h2 className="text-heading text-center">
+                <h3 className="text-heading text-center">
                     <span className="text-primary">Sign Up!</span> Get 100% Peace Of Mind
-                </h2>
+                </h3>
             </form>
         </div>
     )
