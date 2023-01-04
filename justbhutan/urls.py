@@ -18,7 +18,6 @@ from django.urls import path, include, re_path
 from django.shortcuts import render
 
 def render_react(request):
-    print("lol")
     return render(request, "index.html")
 
 urlpatterns = [
@@ -29,6 +28,6 @@ urlpatterns = [
     path('api/city/', include('justbhutan.city.urls')),
     path('api/survey/', include('justbhutan.survey.urls')),
     path('api/sku/', include('justbhutan.sku.urls')),
+    path('api/auth/', include('justbhutan.user.urls')),
     path("", render_react),
-    # re_path(r"^(?:.*)/?$", render_react)
 ]

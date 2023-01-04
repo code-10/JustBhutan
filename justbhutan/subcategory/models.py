@@ -2,7 +2,7 @@ from django.db import models
 from django.http import JsonResponse
 from django.db import connections
 from django.db.utils import OperationalError
-from justbhutan.utility.response import convertListToJson
+from justbhutan.utility.response import CreateResponse
 from rest_framework import status
 
 def GetAllSubCategories():
@@ -11,8 +11,8 @@ def GetAllSubCategories():
         cursor = db_connection.cursor()
         cursor.execute('''select * from sub_category''')
         data = cursor.fetchall()
-        keys = ["sub_category_id", "sub_category_name", "category_id"]
-        result = convertListToJson(data, keys)
+        columns = [col[0] for col in cursor.description]
+        return CreateResponse(columns, data)
         return result
     except OperationalError as e:
         JsonResponse("There is something wrong with the database connection", e)

@@ -31,13 +31,13 @@ export default function StoryOfTeaSection(){
                 <div className="col-xl-12 col-lg-11 col">
                     <div className="row flex-column flex-md-row text-center">
                         <div className="col d-flex flex-column gap-3  opacity-25 text-md-end pe-md-5">
-                            <h3 className="pt-5"><span className="text-primary">What You</span> Won't <span className="text-primary">Get</span></h3>
+                            <h3 className="pt-5 text-heading"><span className="text-primary">What You</span> Won't <span className="text-primary">Get</span></h3>
                             <p>Pesticide infused tea</p>
                             <p>Heavy metal laden tea</p>
                             <p className="pb-md-6">Air pollution absorbing herbs</p>
                         </div>
                         <div className="col d-flex flex-column gap-3 border-start border-3 border-dark  text-md-start ps-md-5">
-                            <h3 className="pt-5">What You <span className="text-primary">Will</span> Get</h3>
+                            <h3 className="pt-5 text-heading">What You <span className="text-primary">Will</span> Get</h3>
                             <p>Non GMO, 100% organic herbs</p>
                             <p>A refreshingly strong taste & aroma</p>
                             <p className="pb-md-6">Teas grown in the healthiest of soils</p>
