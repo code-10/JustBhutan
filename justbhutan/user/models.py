@@ -110,7 +110,7 @@ def UserLogin(login_request):
                 user_details = cursor.fetchall()
                 
                 payload = {
-                    'id': user_details[0][0],
+                    'user_id': user_details[0][0],
                     'email_id': user_details[0][1],
                     'access_role_id': user_details[0][2],
                     'access_role_name': user_details[0][3]

@@ -64,7 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    # 'justbhutan.middleware.AuthMiddleware.TokenAuthentication',
+    'justbhutan.middleware.AuthMiddleware.TokenAuthentication',
 ]
 
 ROOT_URLCONF = 'justbhutan.urls'
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'justbhutan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {  
+DATABASES = {
     'default': dj_database_url.config()
 }
 

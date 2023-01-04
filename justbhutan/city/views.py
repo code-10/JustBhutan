@@ -8,6 +8,8 @@ from . import models
 def City(request):
     if request.method == 'GET':
         try:
+            print(request.credentails)
+            print(request.message)
             result = models.GetAllCities()
             return JsonResponse(result,status=status.HTTP_200_OK,safe=False)
         except Exception as e:
