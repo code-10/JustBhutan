@@ -10,7 +10,7 @@ export default function SurveySection() {
     const [origProductKV, setOrigProductKV] = useState({})
     const [productKV, setProductKV] = useState({});
     const [alertMessage, setAlertMessage] = useState({isActive:false, message:'', alertType:'', header:""})
-    // const [alertMessage, setAlertMessage] = useState({isActive:true, message:'tessssssssssssss', alertType:'alert-primary', header:"default"})
+    // const [alertMessage, setAlertMessage] = useState({isActive:true, message:'alert', alertType:'alert-primary', header:"default"})
 
     const formik = useFormik({
         initialValues:{
@@ -90,13 +90,6 @@ export default function SurveySection() {
     }
     return(
         <div className=" mt-6 vstack">
-            <div className={`align-items-center alert flex-row ${ alertMessage.alertType } position-fixed top-0 end-0 m-3 ${ alertMessage.isActive ? 'fade-in' : 'fade-out'} pe-6`} >
-                <div>
-                    <h5 class="fw-bold alert-heading fs-65">{alertMessage.header}</h5>
-                    { alertMessage.message !== "" && <p class="mb-0 fs-7">{alertMessage.message}</p>}
-                </div>
-            </div>
-
             <div className="text-center">
                 <h3 className="text-heading">
                     <span className="text-primary"> Your Choice </span> Matters
@@ -152,6 +145,14 @@ export default function SurveySection() {
                                 <p  className="  mb-1 text-center">City</p>
                                 <input type="tel" required className="form-control bg-lightgray rounded-pill py-2" id="city" name="city" onChange={formik.handleChange} value={formik.values.city} aria-describedby="" placeholder=""/>
                             </div>
+                            {alertMessage.isActive && 
+                                <div className={`alert ${ alertMessage.alertType } m-2 ${ alertMessage.isActive ? 'fade-in' : 'fade-out'}`} >
+                                    <div>
+                                        <h5 class="fw-bold alert-heading fs-65">{alertMessage.header}</h5>
+                                        { alertMessage.message !== "" && <p class="mb-0 fs-7">{alertMessage.message}</p>}
+                                    </div>
+                                </div>
+                            }                         
                         </div>
                 </div>
                 <div className="d-flex flex-row justify-content-center pb-5">
