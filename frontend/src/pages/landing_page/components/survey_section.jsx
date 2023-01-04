@@ -9,8 +9,8 @@ export default function SurveySection() {
     const [productData, setProductData] = useState([]);
     const [origProductKV, setOrigProductKV] = useState({})
     const [productKV, setProductKV] = useState({});
-    // const [alertMessage, setAlertMessage] = useState({isActive:false, message:'', alertType:'', header:""})
-    const [alertMessage, setAlertMessage] = useState({isActive:true, message:'tessssssssssssss', alertType:'alert-primary', header:"default"})
+    const [alertMessage, setAlertMessage] = useState({isActive:false, message:'', alertType:'', header:""})
+    // const [alertMessage, setAlertMessage] = useState({isActive:true, message:'tessssssssssssss', alertType:'alert-primary', header:"default"})
 
     const formik = useFormik({
         initialValues:{
