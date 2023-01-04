@@ -4,7 +4,6 @@ from django.http import JsonResponse
 from django.http.response import HttpResponse
 from django.db import connections
 from django.db.utils import OperationalError
-from justbhutan.utility.response import convertListToJson
 from justbhutan.utility.excel import ExportDataToExcel
 from justbhutan.utility.custom_datetime import GetDateTime
 from django.contrib.auth.hashers import make_password, check_password

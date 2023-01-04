@@ -2,7 +2,7 @@ from django.db import models
 from django.http import JsonResponse
 from django.db import connections
 from django.db.utils import OperationalError
-from justbhutan.utility.response import convertListToJson
+from justbhutan.utility.response import CreateResponse
 
 def AddSku(sku_request):
     db_connection = connections['default']
