@@ -143,7 +143,7 @@ export default function SurveySection() {
                             </div>
                             <div className="form-group">
                                 <p  className="  mb-1 text-center">City</p>
-                                <input type="tel" required className="form-control bg-lightgray rounded-pill py-2" id="city" name="city" onChange={formik.handleChange} value={formik.values.city} aria-describedby="" placeholder=""/>
+                                <input type="text" required className="form-control bg-lightgray rounded-pill py-2" id="city" name="city" onChange={formik.handleChange} value={formik.values.city} aria-describedby="" placeholder=""/>
                             </div>
                             {alertMessage.isActive && 
                                 <div className={`alert ${ alertMessage.alertType } m-2 ${ alertMessage.isActive ? 'fade-in' : 'fade-out'}`} >
